@@ -1,0 +1,64 @@
+{
+  "name": "bonsai-react",
+  "version": "0.1.1",
+  "description": "A minimal isomorphic data store for React and NextJS",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "data",
+    "store",
+    "react",
+    "state-management",
+    "typescript"
+  ],
+  "homepage": "https://github.com/dejang/bonsai#readme",
+  "bugs": {
+    "url": "https://github.com/dejang/bonsai/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dejang/bonsai.git"
+  },
+  "license": "MIT",
+  "author": "Dejan Gitin <dejan871@protonmail.com>",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "dev": "npm run build:watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit --strict",
+    "validate": "npm run typecheck && npm run build",
+    "prepublishOnly": "npm run validate",
+    "publish:dry": "npm publish --dry-run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "react": "^19.2.3",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
